@@ -1,6 +1,5 @@
 import express from "express";
 import path from "path";
-
 import cors from "cors";
 import {serve} from "inngest/express";
 import { clerkMiddleware } from '@clerk/express'
