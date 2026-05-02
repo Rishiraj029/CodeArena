@@ -10,6 +10,7 @@ import { ENV } from "./lib/env.js";
 import { connectDB } from "./lib/db.js";
 import { inngest, syncUser, deleteUserFromDB } from "./lib/inngest.js";
 import  chatRoutes  from "./routes/chatRoutes.js";
+import  sessionRoutes  from "./routes/sessionRoutes.js";
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(clerkMiddleware());
 
 app.use("/api/inngest", serve({ client: inngest, functions: [syncUser, deleteUserFromDB] }))
 app.use("/api/chat", chatRoutes)
+app.use("/api/sessions", sessionRoutes)
 
 
 app.get("/health", (req, res) => {
