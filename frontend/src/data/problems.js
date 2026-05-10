@@ -35,6 +35,7 @@ export const PROBLEMS = {
     starterCode: {
       javascript: `function twoSum(nums, target) {
   // Write your solution here
+   // IMPORTANT: You must RETURN the result, not just print it!
   
 }
 
@@ -44,6 +45,7 @@ console.log(twoSum([3, 2, 4], 6)); // Expected: [1, 2]
 console.log(twoSum([3, 3], 6)); // Expected: [0, 1]`,
       python: `def twoSum(nums, target):
     # Write your solution here
+    # IMPORTANT: You must RETURN the result, not just print it!
     pass
 
 # Test cases
