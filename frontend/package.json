@@ -18,6 +18,8 @@
     "@vitejs/plugin-react": "^5.0.3",
     "axios": "^1.12.2",
     "canvas-confetti": "^1.9.3",
+    "daisyui": "^5.5.19",
+    "date-fns": "^4.1.0",
     "lucide-react": "^1.14.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -26,8 +28,7 @@
     "react-router": "^7.9.4",
     "react-router-dom": "^7.14.2",
     "tailwindcss": "^4.1.14",
-    "vite": "^7.1.7",
-    "daisyui": "^5.5.19"
+    "vite": "^7.1.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
