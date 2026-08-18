@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
-import { BookOpenIcon, LayoutDashboardIcon, SparklesIcon, MenuIcon, XIcon } from "lucide-react";
+import { BookOpenIcon, ClipboardListIcon, LayoutDashboardIcon, SparklesIcon, MenuIcon, XIcon } from "lucide-react";
 import { UserButton } from "@clerk/clerk-react";
 
 function Navbar() {
@@ -54,6 +54,19 @@ function Navbar() {
             <span className="hidden md:inline">Problems</span>
           </Link>
           <Link
+            to={"/submissions"}
+            className={`px-4 py-2.5 rounded-lg transition-all duration-200 font-medium flex items-center gap-x-2.5
+              ${
+                isActive("/submissions")
+                  ? "bg-[#00ff88] text-black"
+                  : "hover:bg-[#00ff88]/10 text-white hover:text-[#00ff88]"
+              }
+              `}
+          >
+            <ClipboardListIcon className="size-4" />
+            <span className="hidden md:inline">Submissions</span>
+          </Link>
+          <Link
             to={"/dashboard"}
             className={`px-4 py-2.5 rounded-lg transition-all duration-200 font-medium flex items-center gap-x-2.5
               ${
@@ -88,6 +101,20 @@ function Navbar() {
               >
                 <BookOpenIcon className="size-4" />
                 <span>Problems</span>
+              </Link>
+              <Link
+                to={"/submissions"}
+                className={`w-11/12 px-4 py-3 rounded-lg text-center transition-all duration-200 font-medium flex items-center justify-center gap-x-2.5
+                  ${
+                    isActive("/submissions")
+                      ? "bg-[#00ff88] text-black"
+                      : "hover:bg-[#00ff88]/10 text-white hover:text-[#00ff88]"
+                  }
+                `}
+                onClick={() => setMenuOpen(false)}
+              >
+                <ClipboardListIcon className="size-4" />
+                <span>Submissions</span>
               </Link>
               <Link
                 to={"/dashboard"}

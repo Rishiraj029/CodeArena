@@ -6,6 +6,9 @@ import HomePage from './pages/HomePage';
 import ProblemPage from './pages/ProblemPage';
 import ProblemsPage from './pages/ProblemsPage';
 import SessionPage from './pages/SessionPage';
+import SubmissionsPage from './pages/SubmissionsPage';
+import SubmissionDetailPage from './pages/SubmissionDetailPage';
+import UserProfilePage from './pages/UserProfilePage';
 
 function App() {
 
@@ -22,6 +25,9 @@ function App() {
        <Route path="/problems" element={isSignedIn ? <ProblemsPage /> : <Navigate  to={"/"} />} />
        <Route path="/problem/:id" element={isSignedIn ? <ProblemPage /> : <Navigate  to={"/"} />} />
        <Route path="/session/:id" element={isSignedIn ? <SessionPage /> : <Navigate  to={"/"} />} />
+       <Route path="/submissions" element={isSignedIn ? <SubmissionsPage /> : <Navigate to={"/"} />} />
+       <Route path="/submissions/:submissionId" element={isSignedIn ? <SubmissionDetailPage /> : <Navigate to={"/"} />} />
+       <Route path="/users/:userId" element={<UserProfilePage />} />
 
     </Routes>
 

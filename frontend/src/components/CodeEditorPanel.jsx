@@ -1,14 +1,16 @@
 import Editor from "@monaco-editor/react";
-import { Loader2Icon, PlayIcon } from "lucide-react";
+import { Loader2Icon, PlayIcon, SendIcon } from "lucide-react";
 import { LANGUAGE_CONFIG } from "../data/problems";
 
 function CodeEditorPanel({
   selectedLanguage,
   code,
   isRunning,
+  isSubmitting,
   onLanguageChange,
   onCodeChange,
   onRunCode,
+  onSubmitSolution,
 }) {
   return (
     <div className="h-full flex flex-col bg-transparent">
@@ -33,23 +35,47 @@ function CodeEditorPanel({
           </select>
         </div>
 
-        <button
-          className="flex items-center gap-2 px-5 py-2 rounded-lg bg-[#00ff88] text-black font-bold text-sm shadow-lg hover:scale-105 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
-          disabled={isRunning}
-          onClick={onRunCode}
-        >
-          {isRunning ? (
-            <>
-              <Loader2Icon className="w-4 h-4 animate-spin" />
-              Running...
-            </>
-          ) : (
-            <>
-              <PlayIcon className="w-4 h-4" />
-              Run Code
-            </>
+        <div className="flex items-center gap-2">
+          {/* Run Code */}
+          <button
+            className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#00ff88]/40 text-[#00ff88] font-semibold text-sm hover:bg-[#00ff88]/10 transition disabled:opacity-60 disabled:cursor-not-allowed"
+            disabled={isRunning || isSubmitting}
+            onClick={onRunCode}
+          >
+            {isRunning ? (
+              <>
+                <Loader2Icon className="w-4 h-4 animate-spin" />
+                Running...
+              </>
+            ) : (
+              <>
+                <PlayIcon className="w-4 h-4" />
+                Run Code
+              </>
+            )}
+          </button>
+
+          {/* Submit Solution */}
+          {onSubmitSolution && (
+            <button
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#00ff88] text-black font-bold text-sm shadow-lg hover:scale-105 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
+              disabled={isRunning || isSubmitting}
+              onClick={onSubmitSolution}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2Icon className="w-4 h-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  <SendIcon className="w-4 h-4" />
+                  Submit
+                </>
+              )}
+            </button>
           )}
-        </button>
+        </div>
       </div>
 
       <div className="flex-1">

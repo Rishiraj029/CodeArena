@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router";
 import { useEndSession, useJoinSession, useSessionById } from "../hooks/useSessions";
 import { PROBLEMS } from "../data/problems";
 import { executeCode } from "../lib/piston";
+import { useSubmitSolution } from "../hooks/useSubmissions";
 import Navbar from "../components/Navbar";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import { getDifficultyBadgeClass } from "../lib/utils";
@@ -21,6 +22,7 @@ function SessionPage() {
   const { user } = useUser();
   const [output, setOutput] = useState(null);
   const [isRunning, setIsRunning] = useState(false);
+  const submitMutation = useSubmitSolution();
 
   const { data: sessionData, isLoading: loadingSession, refetch } = useSessionById(id);
 
@@ -86,6 +88,40 @@ function SessionPage() {
     const result = await executeCode(selectedLanguage, code);
     setOutput(result);
     setIsRunning(false);
+  };
+
+  const handleSubmitSolution = () => {
+    if (!code?.trim() || !problemData) return;
+
+    import("react-hot-toast").then(({ default: toast }) => {
+      const toastId = toast.loading("Submitting your solution...");
+
+      submitMutation.mutate(
+        {
+          problemId: problemData.id,
+          problemTitle: problemData.title,
+          language: selectedLanguage,
+          sourceCode: code,
+          submissionType: "session_battle",
+          sessionId: session?._id,
+        },
+        {
+          onSuccess: (submission) => {
+            toast.dismiss(toastId);
+            if (submission.isAccepted) {
+              toast.success("✅ Accepted!");
+            } else {
+              toast.error(`❌ ${submission.status?.replace(/_/g, " ")}`);
+            }
+            navigate(`/submissions/${submission._id}`);
+          },
+          onError: (err) => {
+            toast.dismiss(toastId);
+            toast.error(err.message || "Submission failed.");
+          },
+        }
+      );
+    });
   };
 
   const handleEndSession = () => {
@@ -236,9 +272,11 @@ function SessionPage() {
                       selectedLanguage={selectedLanguage}
                       code={code}
                       isRunning={isRunning}
+                      isSubmitting={submitMutation.isPending}
                       onLanguageChange={handleLanguageChange}
                       onCodeChange={(value) => setCode(value)}
                       onRunCode={handleRunCode}
+                      onSubmitSolution={problemData ? handleSubmitSolution : undefined}
                     />
                   </Panel>
 
