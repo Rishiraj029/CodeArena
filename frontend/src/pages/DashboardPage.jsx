@@ -40,14 +40,17 @@ function DashboardPage() {
     );
   };
 
-  const activeSessions = activeSessionsData?.sessions || [];
-  const recentSessions = recentSessionsData?.sessions || [];
-
   const isUserInSession = (session) => {
     if (!user.id) return false;
 
     return session.host?.clerkId === user.id || session.participant?.clerkId === user.id;
   };
+
+  // Filter to show only active sessions the user is NOT already in
+  const activeSessions = (activeSessionsData?.sessions || []).filter(
+    (session) => !isUserInSession(session)
+  );
+  const recentSessions = recentSessionsData?.sessions || [];
 
   return (
     <>
@@ -65,7 +68,6 @@ function DashboardPage() {
             <ActiveSessions
               sessions={activeSessions}
               isLoading={loadingActiveSessions}
-              isUserInSession={isUserInSession}
             />
           </div>
 

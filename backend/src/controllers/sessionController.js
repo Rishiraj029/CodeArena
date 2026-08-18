@@ -84,12 +84,18 @@ export async function createSession(req, res){
 
 export async function getActiveSessions(_, res){
   try {
-   const session =  await Session.find({status: "active"}).populate("host","name profileImage email clerkId")
+   // Only fetch sessions created in the last 1 hour to keep active sessions fresh
+   const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
+
+   const sessions =  await Session.find({
+     status: "active",
+     createdAt: { $gte: oneHourAgo } // Only sessions from last 1 hour
+   }).populate("host","name profileImage email clerkId")
    .populate("participant", "name profileImage email clerkId")
    .sort({createdAt:-1})
    .limit(20);
 
-   res.status(200).json({session})
+   res.status(200).json({sessions})
   } catch (error) {
     console.log("Error in getActiveSession controller:", error.message);
     res.status(500).json({ message:"Internal Server Error" });
@@ -203,5 +209,31 @@ export async function endSession(req, res){
     console.log("Error in end Session controller has occured: ", error.message);
     res.status(500).json({message: "Internal Server Error"});
     
+  }
+}
+
+
+export async function cleanupOldSessions(_, res) {
+  try {
+    // Mark all active sessions older than 2 hours as completed
+    const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000);
+    
+    const result = await Session.updateMany(
+      {
+        status: "active",
+        createdAt: { $lt: twoHoursAgo }
+      },
+      {
+        $set: { status: "completed" }
+      }
+    );
+
+    res.status(200).json({
+      message: `Cleaned up ${result.modifiedCount} old test sessions`,
+      cleanedCount: result.modifiedCount
+    });
+  } catch (error) {
+    console.log("Error in cleanupOldSessions:", error.message);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 }

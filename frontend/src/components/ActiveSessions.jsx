@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router";
 import { getDifficultyBadgeClass } from "../lib/utils";
 
-function ActiveSessions({ sessions, isLoading, isUserInSession }) {
+function ActiveSessions({ sessions, isLoading }) {
   return (
     <div className="lg:col-span-2 card bg-base-100 border-2 border-green-400/30 hover:border-green-500/60 h-full">
       <div className="card-body">
@@ -72,7 +72,7 @@ function ActiveSessions({ sessions, isLoading, isUserInSession }) {
                           <UsersIcon className="size-4" />
                           <span className="text-xs">{session.participant ? "2/2" : "1/2"}</span>
                         </div>
-                        {session.participant && !isUserInSession(session) ? (
+                        {session.participant ? (
                           <span className="badge badge-error badge-sm">FULL</span>
                         ) : (
                           <span className="badge badge-success badge-sm">OPEN</span>
@@ -81,11 +81,11 @@ function ActiveSessions({ sessions, isLoading, isUserInSession }) {
                     </div>
                   </div>
 
-                  {session.participant && !isUserInSession(session) ? (
+                  {session.participant ? (
                     <button className="btn btn-disabled btn-sm">Full</button>
                   ) : (
                     <Link to={`/session/${session._id}`} className="btn btn-success btn-sm gap-2">
-                      {isUserInSession(session) ? "Rejoin" : "Join"}
+                      Join
                       <ArrowRightIcon className="size-4" />
                     </Link>
                   )}

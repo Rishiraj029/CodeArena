@@ -19,7 +19,14 @@ const __dirname = path.resolve()
 
 
 app.use(express.json())
-app.use(cors({origin:ENV.CLIENT_URL,credentials:true}));
+app.use(cors({
+  origin: [
+    ENV.CLIENT_URL,
+    "http://localhost:5173",
+    "http://localhost:5174"
+  ],
+  credentials: true
+}));
 app.use(clerkMiddleware()); 
 
 
