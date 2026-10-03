@@ -34,15 +34,16 @@ CodeArena is built as a React frontend and Express backend. The frontend is the 
 
 For execution, the app sends code to Judge0 and returns the output. The problem page compares that output with the expected output stored in the frontend problem data. When you submit, the backend stores the result in MongoDB.
 
-```
-React + Vite
-    |
-    v
-Express + Node
-   |     |     |
-MongoDB Clerk Judge0
-          |
-        Stream
+```mermaid
+graph TB
+    A["React + Vite<br/>Frontend"] -->|API Calls| B["Express + Node<br/>Backend"]
+    B --> C[("MongoDB<br/>Persistence")]
+    B --> D["Judge0<br/>Code Execution"]
+    B --> E["Stream<br/>Video & Chat"]
+    B --> F["Clerk<br/>Authentication"]
+    A -->|Auth| F
+    D -->|Execution Results| A
+    E -->|Session Data| A
 ```
 
 ## Built with
