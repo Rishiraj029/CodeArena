@@ -2,7 +2,8 @@
 
 A coding practice platform where you solve problems, run code instantly, and practice with others through video sessions.
 
-![CodeArena dashboard preview](./assets/codearena-dashboard.svg)
+<img width="1917" height="907" alt="Screenshot 2026-10-03 145742" src="https://github.com/user-attachments/assets/31b8528a-6ece-43ca-a5bf-d8c54a494bd9" />
+
 
 ## What is this?
 
