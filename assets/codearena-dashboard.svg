@@ -1,0 +1,136 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07141E"/>
+      <stop offset="1" stop-color="#0A1723"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#111D2B"/>
+      <stop offset="1" stop-color="#0D1824"/>
+    </linearGradient>
+    <linearGradient id="panel2" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0F1C2B"/>
+      <stop offset="1" stop-color="#0B1A29"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#50F0C8"/>
+      <stop offset="1" stop-color="#34D5B0"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#A675FF"/>
+      <stop offset="1" stop-color="#7E5BFF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <rect x="0" y="0" width="1600" height="74" fill="#0D1721"/>
+  <rect x="32" y="18" width="36" height="36" rx="10" fill="#1B2C39"/>
+  <circle cx="53" cy="35" r="12" fill="#37D9CB"/>
+  <path d="M46 35L52 41L61 28" stroke="#081722" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="88" y="46" fill="#F4FAFF" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="700">CodeArena</text>
+  <text x="256" y="45" fill="#8EA4B6" font-size="15" font-family="Segoe UI, Arial, sans-serif">Code Together</text>
+
+  <g fill="#E7F0F7" font-family="Segoe UI, Arial, sans-serif" font-weight="600">
+    <text x="980" y="46" font-size="18">Problems</text>
+    <text x="1095" y="46" font-size="18">Submissions</text>
+    <text x="1265" y="46" font-size="18">Dashboard</text>
+  </g>
+
+  <circle cx="1490" cy="35" r="20" fill="#7A5CFB"/>
+  <circle cx="1490" cy="35" r="10" fill="#F6F8FF" opacity="0.9"/>
+
+  <rect x="58" y="110" width="918" height="662" rx="18" fill="url(#panel)" stroke="#1A2B38"/>
+  <rect x="1000" y="110" width="542" height="662" rx="18" fill="url(#panel2)" stroke="#1A2B38"/>
+
+  <text x="92" y="176" fill="#F5F9FF" font-size="58" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Reverse String</text>
+  <rect x="90" y="200" width="120" height="36" rx="10" fill="#36D0A7" fill-opacity="0.2"/>
+  <text x="118" y="224" fill="#3DE0B6" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Easy</text>
+
+  <text x="90" y="305" fill="#F5F9FF" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">String • Two Pointers</text>
+  <text x="90" y="350" fill="#A8BAC8" font-size="22" font-family="Segoe UI, Arial, sans-serif">Host: Rishiraj singh Rathore • 2/2 participants</text>
+
+  <rect x="90" y="392" width="868" height="178" rx="18" fill="#141F2C" stroke="#1A2B38"/>
+  <text x="118" y="450" fill="#F5F9FF" font-size="30" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Description</text>
+  <text x="118" y="495" fill="#DFEDF7" font-size="24" font-family="Segoe UI, Arial, sans-serif">Write a function that reverses a string. The input string is given as an array of characters s.</text>
+  <text x="118" y="532" fill="#DFEDF7" font-size="24" font-family="Segoe UI, Arial, sans-serif">You must do this by modifying the input array in-place with O(1) extra memory.</text>
+
+  <g>
+    <rect x="90" y="606" width="180" height="52" rx="12" fill="#1A2A35" stroke="#23384A"/>
+    <circle cx="130" cy="632" r="16" fill="#F6CC47"/>
+    <text x="154" y="640" fill="#F5F9FF" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">JavaScript</text>
+    <path d="M330 630L352 646L330 662" stroke="#D9E6F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="602" y="606" width="150" height="54" rx="12" fill="#1B313A" stroke="#2B4C59"/>
+    <path d="M640 630H672" stroke="#3DE0B6" stroke-width="4" stroke-linecap="round"/>
+    <path d="M656 614L672 630L656 646" stroke="#3DE0B6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="690" y="640" fill="#3DE0B6" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Run Code</text>
+
+    <rect x="765" y="606" width="160" height="54" rx="12" fill="url(#green)"/>
+    <text x="816" y="640" fill="#06181D" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Submit</text>
+  </g>
+
+  <rect x="90" y="682" width="868" height="70" rx="18" fill="#0D1720" stroke="#1A2B38"/>
+  <text x="124" y="728" fill="#F5F9FF" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Output</text>
+  <text x="122" y="822" fill="#A8BAC8" font-size="24" font-family="Segoe UI, Arial, sans-serif">Click “Run Code” to see the output here...</text>
+
+  <g>
+    <rect x="1020" y="140" width="474" height="52" rx="12" fill="#111E2B"/>
+    <text x="1050" y="172" fill="#F9FDFF" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700">2 participants</text>
+    <rect x="1228" y="144" width="96" height="40" rx="10" fill="#7D60FF" fill-opacity="0.85"/>
+    <text x="1266" y="171" fill="#F9FDFF" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Chat</text>
+    <rect x="1328" y="144" width="146" height="40" rx="10" fill="#0E1C2A"/>
+    <text x="1360" y="171" fill="#C7D7E7" font-size="22" font-family="Segoe UI, Arial, sans-serif">✕</text>
+  </g>
+
+  <g>
+    <rect x="1060" y="216" width="394" height="470" rx="18" fill="#0D1620"/>
+    <rect x="1060" y="216" width="394" height="58" rx="18" fill="#111E2B"/>
+    <text x="1128" y="252" fill="#F5F9FF" font-size="20" font-family="Segoe UI, Arial, sans-serif">Today at 2:55 PM</text>
+
+    <g>
+      <rect x="1090" y="308" width="198" height="86" rx="18" fill="#1A2A36"/>
+      <text x="1112" y="349" fill="#EAF6FF" font-size="22" font-family="Segoe UI, Arial, sans-serif">hi lets solve this problem</text>
+      <text x="1112" y="372" fill="#7E94A9" font-size="14" font-family="Segoe UI, Arial, sans-serif">Today at 2:55 PM</text>
+      <circle cx="1268" cy="347" r="12" fill="#7E5BFF"/>
+      <text x="1264" y="352" fill="#FFF" font-size="12" font-family="Segoe UI, Arial, sans-serif" font-weight="700">1</text>
+    </g>
+
+    <g>
+      <rect x="1104" y="436" width="212" height="88" rx="18" fill="#1A2A36"/>
+      <text x="1128" y="477" fill="#EAF6FF" font-size="22" font-family="Segoe UI, Arial, sans-serif">yes it is looking quite difficult</text>
+      <text x="1128" y="499" fill="#7E94A9" font-size="14" font-family="Segoe UI, Arial, sans-serif">Rishiraj singh Rathore</text>
+      <circle cx="1300" cy="477" r="12" fill="#FF6A7B"/>
+      <text x="1296" y="482" fill="#FFF" font-size="12" font-family="Segoe UI, Arial, sans-serif" font-weight="700">1</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="1282" y="720" width="210" height="48" rx="14" fill="#121E2A"/>
+    <text x="1310" y="751" fill="#708399" font-size="20" font-family="Segoe UI, Arial, sans-serif">Type your message</text>
+    <circle cx="1474" cy="744" r="14" fill="#7E5BFF"/>
+    <path d="M1468 744H1480M1474 738V750" stroke="#F5F9FF" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <rect x="1058" y="538" width="146" height="150" rx="20" fill="#0B1824" stroke="#253949"/>
+    <circle cx="1132" cy="588" r="46" fill="#7E5BFF"/>
+    <circle cx="1132" cy="598" r="22" fill="#F0F5FF" opacity="0.92"/>
+    <text x="1100" y="640" fill="#F5F9FF" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="600">Rishiraj</text>
+  </g>
+
+  <g>
+    <rect x="1218" y="538" width="146" height="150" rx="20" fill="#0B1824" stroke="#253949"/>
+    <circle cx="1291" cy="588" r="46" fill="#FF8C5B"/>
+    <circle cx="1291" cy="598" r="22" fill="#F0F5FF" opacity="0.9"/>
+    <text x="1260" y="640" fill="#F5F9FF" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="600">Rishiraj</text>
+  </g>
+
+  <g>
+    <rect x="1300" y="692" width="54" height="54" rx="12" fill="#7E5BFF"/>
+    <path d="M1327 705V727M1314 718H1340" stroke="#F5F9FF" stroke-width="3.2" stroke-linecap="round"/>
+  </g>
+</svg>

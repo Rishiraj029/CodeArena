@@ -2,11 +2,11 @@
 
 A coding practice platform where you solve problems, run code instantly, and practice with others through video sessions.
 
-<!-- Add a CodeArena screenshot here -->
+![CodeArena dashboard preview](./assets/codearena-dashboard.svg)
 
 ## What is this?
 
-CodeArena is a browser-based environment for practicing coding problems. Pick a problem, write your solution in JavaScript, Python, or Java, run it to test your logic, and submit when you're ready. If you want to work through problems with someone else, you can create or join a session with built-in video and chat.
+CodeArena is a browser-based environment for practicing coding problems. Pick a problem, write your solution in JavaScript, Python, or Java, run it to test your logic, and submit when you're ready. If you get stuck, you can collaborate with others in a live session and compare approaches in real time.
 
 The platform stores your submissions so you can track your progress and revisit past solutions. Your profile shows your activity and submission history.
 
@@ -30,9 +30,9 @@ Create or join a session and use Stream video/chat while working through problem
 
 ## How it works
 
-CodeArena is built as a React frontend and Express backend. The frontend is the coding environment: problem view, editor, output panel, and session UI. The backend handles auth, MongoDB persistence, code execution, and session setup.
+CodeArena is built as a React frontend and Express backend. The frontend is the coding environment: problem view, editor, output panel, and session UI. The backend handles auth, MongoDB persistence, code execution, and session orchestration.
 
-For execution, the app sends code to Judge0 and returns the output. The problem page compares that output with the expected output stored in the frontend problem data. When you submit, the backend stores the result in MongoDB.
+For execution, the app sends code to Judge0 and returns the output. The problem page compares that output with the expected output stored in the frontend problem data. When you submit, the backend stores the result in MongoDB and displays it in your history.
 
 ```mermaid
 graph TB
