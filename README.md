@@ -1,15 +1,24 @@
 # CodeArena
 
 A coding practice platform where you solve problems, run code instantly, and practice with others through video sessions.
-<br> <br>
 
-<img width="1917" height="1000" alt="Screenshot 2026-10-03 145742" src="https://github.com/user-attachments/assets/31b8528a-6ece-43ca-a5bf-d8c54a494bd9" />
 <br><br>
 
+<img width="1917" height="1000" alt="Screenshot 2026-10-03 145742" src="https://github.com/user-attachments/assets/31b8528a-6ece-43ca-a5bf-d8c54a494bd9" />
+
+<br><br>
+
+<div align="center">
+  
+[🚀 Visit CodeArena](https://codearena-a6vi.onrender.com) | [📖 Learn More](#what-is-this)
+
+</div>
+
+<br><br>
 
 ## What is this?
 
-CodeArena is a browser-based environment for practicing coding problems. Pick a problem, write your solution in JavaScript, Python, or Java, run it to test your logic, and submit when you're ready. If you get stuck, you can collaborate with others in a live session and compare approaches in real time.
+CodeArena is a browser-based environment for practicing coding problems. Pick a problem, write your solution in JavaScript, Python, or Java, run it to test your logic, and submit when you're ready.
 
 The platform stores your submissions so you can track your progress and revisit past solutions. Your profile shows your activity and submission history.
 
@@ -33,9 +42,9 @@ Create or join a session and use Stream video/chat while working through problem
 
 ## How it works
 
-CodeArena is built as a React frontend and Express backend. The frontend is the coding environment: problem view, editor, output panel, and session UI. The backend handles auth, MongoDB persistence, code execution, and session orchestration.
+CodeArena is built as a React frontend and Express backend. The frontend is the coding environment: problem view, editor, output panel, and session UI. The backend handles auth, MongoDB persistence, and integrations.
 
-For execution, the app sends code to Judge0 and returns the output. The problem page compares that output with the expected output stored in the frontend problem data. When you submit, the backend stores the result in MongoDB and displays it in your history.
+For execution, the app sends code to Judge0 and returns the output. The problem page compares that output with the expected output stored in the frontend problem data. When you submit, the backend stores the result.
 
 ```mermaid
 graph TB
